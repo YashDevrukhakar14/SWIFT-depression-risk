@@ -35,8 +35,9 @@ import optuna
 optuna.logging.set_verbosity(optuna.logging.WARNING)
 warnings.filterwarnings("ignore")
 
-RAW_DATA_PATH = Path(__file__).resolve().parent / "database_majorproj.csv"
-OUT_DIR = Path(__file__).resolve().parent / "publication_results" / "corrected"
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+RAW_DATA_PATH = PROJECT_ROOT / "data" / "database_majorproj.csv"
+OUT_DIR = PROJECT_ROOT / "publication_results" / "corrected"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 

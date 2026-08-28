@@ -19,8 +19,9 @@ from sklearn.pipeline import Pipeline
 from feature_engineering import build_preprocessor, prepare_xy
 
 ROOT = Path(__file__).resolve().parent
-DATA_PATH = ROOT / "database_majorproj.csv"
-ARTIFACTS = ROOT / "artifacts"
+PROJECT_ROOT = ROOT.parent
+DATA_PATH = PROJECT_ROOT / "data" / "database_majorproj.csv"
+ARTIFACTS = PROJECT_ROOT / "artifacts"
 ARTIFACTS.mkdir(exist_ok=True)
 
 

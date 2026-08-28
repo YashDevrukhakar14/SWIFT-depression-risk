@@ -1,22 +1,47 @@
 # SWIFT: Student Wellness Depression-Risk Estimation
-This repository contains the computational framework and prototype code for the SWIFT model.
 
-## Quickstart
-1. Install dependencies: `pip install -r requirements.txt`
-2. Run data processing & training: `python train.py`
-3. Launch prototype UI: `streamlit run app.py`
+This repository contains the reproducibility code for the SWIFT machine-learning study. It includes preprocessing, feature engineering, model development, validation, calibration, benchmarking, and explainability utilities.
 
-Optional XAI evaluation: `python xai_evaluation.py`
+## Requirements
 
-## Study Source Layout
-- `pipelines/` - publication-grade benchmarking, corrected validation, and bootstrap pipelines.
-- `feature_engineering.py` - shared preprocessing and engineered wellness features.
-- `prototype/backend/` - FastAPI prediction service, feature engineering, explanations, and tests.
-- `prototype/frontend/` - React/Vite interactive web application prototype.
-- `prototype/scripts/export_model.py` - exports the prototype model artifact.
+Use Python 3.10 or newer and install the pinned dependencies:
 
-### Full Web Prototype
-1. Install backend dependencies: `pip install -r prototype/backend/requirements.txt`
-2. Start the API: `cd prototype/backend` then `uvicorn main:app --reload --port 8000`
-3. In another terminal, start the UI: `cd prototype/frontend`, `npm install`, then `npm run dev`
-4. Open `http://localhost:5173`
+```text
+pip install -r requirements.txt
+```
+
+## Dataset
+
+The original student-level dataset is not redistributed here because access is subject to applicable privacy and institutional restrictions. Obtain an authorized copy and place it at:
+
+```text
+data/database_majorproj.csv
+```
+
+The dataset must contain the target column `Depressive symptoms` and the feature columns used by `src/feature_engineering.py`.
+
+## Reproduction
+
+Run the primary training workflow from the repository root:
+
+```text
+python scripts/run_pipeline.py
+```
+
+Additional workflows are available in `src/`:
+
+- `benchmark.py` compares tree-based models.
+- `calibration.py` generates a reliability diagram.
+- `explainability.py` calculates SHAP-based feature importance when SHAP is installed.
+- `publication_grade_clinical_ai_pipeline.py` runs the publication analysis.
+- `swift_corrected_validation.py` and `swift_balanced_validation.py` run corrected validation analyses.
+
+Generated models, figures, and result tables are written to ignored output directories. The publication analysis requires the authorized dataset and may require additional optional packages listed in `requirements.txt`.
+
+## Scope
+
+This deposit contains analysis source and reproducibility instructions only. It does not include private data, serialized model binaries, user records, virtual environments, temporary files, or a publication notebook because no final notebook is present in the source project.
+
+## Code Availability
+
+The code is provided for research reproducibility. It is not a clinical diagnostic tool, and model outputs require appropriate professional and ethical review before interpretation.

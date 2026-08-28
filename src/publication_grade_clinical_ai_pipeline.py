@@ -75,8 +75,9 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 
 sns.set_theme(style="whitegrid", context="talk")
 
-RAW_DATA_PATH = Path(__file__).resolve().parent / "database_majorproj.csv"
-RESULTS_DIR = Path(__file__).resolve().parent / "publication_results"
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+RAW_DATA_PATH = PROJECT_ROOT / "data" / "database_majorproj.csv"
+RESULTS_DIR = PROJECT_ROOT / "publication_results"
 RESULTS_DIR.mkdir(exist_ok=True)
 
 

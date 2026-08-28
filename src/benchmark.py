@@ -12,10 +12,11 @@ from xgboost import XGBClassifier
 from feature_engineering import build_preprocessor, prepare_xy
 
 ROOT = Path(__file__).resolve().parent
+PROJECT_ROOT = ROOT.parent
 
 
 def main():
-    features, target = prepare_xy(pd.read_csv(ROOT / "database_majorproj.csv"))
+    features, target = prepare_xy(pd.read_csv(PROJECT_ROOT / "data" / "database_majorproj.csv"))
     x_train, x_test, y_train, y_test = train_test_split(
         features, target, test_size=0.25, stratify=target, random_state=42
     )
@@ -42,7 +43,8 @@ def main():
             "auprc": average_precision_score(y_test, probability),
         })
     result = pd.DataFrame(rows)
-    result.to_csv(ROOT / "artifacts" / "tree_model_comparison.csv", index=False)
+    (PROJECT_ROOT / "artifacts").mkdir(exist_ok=True)
+    result.to_csv(PROJECT_ROOT / "artifacts" / "tree_model_comparison.csv", index=False)
     print(result.to_string(index=False))
 
 
