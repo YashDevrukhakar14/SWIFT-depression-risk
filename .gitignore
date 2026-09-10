@@ -17,14 +17,18 @@ data/database_majorproj.csv
 *.sqlite
 *.sqlite3
 
-artifacts/
+/artifacts/
 publication_results/
 figures/
 *.log
 .DS_Store
-Thumbs.db__pycache__/
-.pytest_cache/
-*.py[cod]
-.venv/
-.env
-.DS_Store
+Thumbs.db
+
+clinical_screening_app/frontend/node_modules/
+clinical_screening_app/frontend/dist/
+clinical_screening_app/frontend/.vite/
+
+# The clinical prototype ships its packaged inference artifacts.
+!clinical_screening_app/artifacts/
+!clinical_screening_app/artifacts/*.joblib
+!clinical_screening_app/artifacts/*.json

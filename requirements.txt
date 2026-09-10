@@ -1,9 +1,12 @@
 pandas
 numpy
 scikit-learn
+imbalanced-learn
+scipy
+statsmodels
+seaborn
 optuna
 joblib
 xgboost
 shap
 matplotlib
-streamlit
