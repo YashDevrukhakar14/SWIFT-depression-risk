@@ -4,8 +4,9 @@ import {
   ResponsiveContainer, Cell, ReferenceLine,
 } from 'recharts'
 
-const ZONE_COLOR = { green: '#16a34a', yellow: '#ca8a04', red: '#dc2626' }
-const ZONE_BG    = { green: '#f0fdf4', yellow: '#fefce8', red: '#fef2f2' }
+const ZONE_COLOR = { green: '#16a34a', yellow: '#d97706', red: '#dc2626' }
+const ZONE_BG    = { green: 'rgba(240, 253, 244, 0.85)', yellow: 'rgba(255, 251, 235, 0.85)', red: 'rgba(254, 242, 242, 0.85)' }
+const ZONE_BORDER = { green: 'rgba(187, 247, 208, 0.9)', yellow: 'rgba(253, 230, 138, 0.9)', red: 'rgba(254, 202, 202, 0.9)' }
 
 export default function ReportPage() {
   const { state } = useLocation()
@@ -18,8 +19,14 @@ export default function ReportPage() {
   if (!result) {
     return (
       <div className="report-empty">
-        <p>No report data found.</p>
-        <button onClick={() => nav('/dashboard')} className="back-btn">← Return to Dashboard</button>
+        <div className="report-card" style={{ maxWidth: '420px', textAlign: 'center', padding: '2.5rem' }}>
+          <p style={{ fontSize: '1.05rem', fontWeight: 600, color: 'var(--gray-700)', marginBottom: '1.25rem' }}>
+            No assessment report loaded.
+          </p>
+          <button onClick={() => nav('/dashboard')} className="back-btn">
+            ← Return to Dashboard
+          </button>
+        </div>
       </div>
     )
   }
@@ -28,7 +35,7 @@ export default function ReportPage() {
     name: e.feature.length > 26 ? e.feature.slice(0, 24) + '…' : e.feature,
     fullName: e.feature,
     contribution: e.contribution,
-    fill: e.contribution >= 0 ? '#dc2626' : '#16a34a',
+    fill: e.contribution >= 0 ? '#ef4444' : '#22c55e',
   })) || []
 
   const zone = result.risk_zone || 'green'
@@ -36,42 +43,58 @@ export default function ReportPage() {
   return (
     <div className="report-shell">
 
-      {/* ── Report Toolbar ── */}
+      {/* ── Report Glass Toolbar ── */}
       <div className="report-toolbar">
         <div className="toolbar-brand">
-          <span className="nav-logo-mark sm">SS</span>
-          <span className="nav-title sm">SPIT SWIFT — Clinical Report</span>
+          <img
+            src="/assets/swift-logo.jpg"
+            alt="SWIFT Report Logo"
+            className="toolbar-logo-img"
+          />
+          <span className="nav-title sm">SWIFT — Clinical Report</span>
         </div>
         <div className="toolbar-actions">
-          <button className="tool-btn" onClick={() => window.print()}>🖨 Print / Export PDF</button>
-          <button className="tool-btn primary" onClick={() => nav('/dashboard')}>← New Assessment</button>
+          <button className="tool-btn" onClick={() => window.print()}>
+            🖨 Print / Export PDF
+          </button>
+          <button className="tool-btn primary" onClick={() => nav('/dashboard')}>
+            ← New Assessment
+          </button>
         </div>
       </div>
 
       <div className="report-body" id="report-content">
 
-        {/* ── Header ── */}
+        {/* ── Header Card with Official Logo ── */}
         <div className="report-header">
           <div className="report-header-left">
             <div className="report-logo-row">
-              <span className="nav-logo-mark">SS</span>
+              <img
+                src="/assets/swift-logo.jpg"
+                alt="SWIFT Report Logo"
+                className="report-header-logo-img"
+              />
               <div>
-                <div className="report-org">SPIT SWIFT — Clinical Screening System</div>
+                <div className="report-org">SWIFT — Completed Wellness Report</div>
                 <div className="report-model">Multi-Domain Passive EHR Screening · Major Depressive Disorder</div>
               </div>
             </div>
           </div>
           <div className="report-header-right">
-            <div className="report-meta-row"><span>Clinician</span><span>{user.name || user.username || '—'}</span></div>
-            <div className="report-meta-row"><span>Generated</span><span>{now}</span></div>
-            <div className="report-meta-row"><span>Model</span><span>Optuna-tuned Logistic Regression</span></div>
+            <div className="report-meta-row"><span>Clinician:</span><span>{user.name || user.username || 'Healthcare Practitioner'}</span></div>
+            <div className="report-meta-row"><span>Generated:</span><span>{now}</span></div>
+            <div className="report-meta-row"><span>Engine:</span><span>Optuna Logistic Regression</span></div>
           </div>
         </div>
 
-        <hr className="report-divider" />
-
-        {/* ── Risk Banner ── */}
-        <div className="risk-banner" style={{ background: ZONE_BG[zone], borderColor: ZONE_COLOR[zone] }}>
+        {/* ── Glass Risk Banner ── */}
+        <div
+          className="risk-banner"
+          style={{
+            background: ZONE_BG[zone],
+            borderColor: ZONE_BORDER[zone],
+          }}
+        >
           <div className="risk-banner-left">
             <div className="risk-zone-dot" style={{ background: ZONE_COLOR[zone] }} />
             <div>
@@ -82,7 +105,9 @@ export default function ReportPage() {
             </div>
           </div>
           <div className="risk-banner-right">
-            <div className="risk-pct" style={{ color: ZONE_COLOR[zone] }}>{result.probability_percent}%</div>
+            <div className="risk-pct" style={{ color: ZONE_COLOR[zone] }}>
+              {result.probability_percent}%
+            </div>
             <div className="risk-pct-label">Depressive Symptom Probability</div>
             <div className="risk-zone-chip" style={{ background: ZONE_COLOR[zone] }}>
               {result.risk_zone_label}
@@ -92,7 +117,7 @@ export default function ReportPage() {
 
         <div className="risk-zone-desc">{result.risk_zone_description}</div>
 
-        {/* ── Two-column layout ── */}
+        {/* ── Two-column Glass Grid ── */}
         <div className="report-grid">
 
           {/* Left col */}
@@ -119,7 +144,7 @@ export default function ReportPage() {
                 </div>
               </div>
               <div className="metrics-sub">
-                Decision Threshold: <strong>{(result.decision_threshold * 100).toFixed(1)}%</strong> ·
+                Decision Threshold: <strong>{(result.decision_threshold * 100).toFixed(1)}%</strong> ·{' '}
                 Traffic-light Threshold: <strong>{result.risk_threshold_percent}%</strong>
               </div>
             </div>
@@ -167,24 +192,24 @@ export default function ReportPage() {
             <div className="report-card">
               <div className="rcard-title">Feature Contribution Analysis (Log-odds Attribution)</div>
               <div className="chart-legend">
-                <span><span className="legend-dot" style={{ background: '#dc2626' }} /> Risk-increasing</span>
-                <span><span className="legend-dot" style={{ background: '#16a34a' }} /> Risk-reducing</span>
+                <span><span className="legend-dot" style={{ background: '#ef4444' }} /> Risk-increasing</span>
+                <span><span className="legend-dot" style={{ background: '#22c55e' }} /> Risk-reducing</span>
               </div>
               <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={chartData} layout="vertical" margin={{ left: 8, right: 16, top: 4, bottom: 4 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" horizontal={false} />
-                  <XAxis type="number" stroke="#9ca3af" tick={{ fontSize: 10, fill: '#6b7280' }} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(226, 232, 240, 0.7)" horizontal={false} />
+                  <XAxis type="number" stroke="#94a3b8" tick={{ fontSize: 10, fill: '#64748b' }} />
                   <YAxis
-                    type="category" dataKey="name" width={160}
-                    stroke="#9ca3af" tick={{ fontSize: 9, fill: '#6b7280' }}
+                    type="category" dataKey="name" width={162}
+                    stroke="#94a3b8" tick={{ fontSize: 9, fill: '#64748b' }}
                   />
-                  <ReferenceLine x={0} stroke="#374151" strokeWidth={1.5} />
+                  <ReferenceLine x={0} stroke="#475569" strokeWidth={1.5} />
                   <Tooltip
-                    contentStyle={{ background: '#fff', border: '1px solid #e5e7eb', fontSize: '0.75rem', borderRadius: '4px' }}
+                    contentStyle={{ background: 'rgba(255, 255, 255, 0.95)', backdropFilter: 'blur(10px)', border: '1px solid rgba(226, 232, 240, 0.9)', fontSize: '0.75rem', borderRadius: '8px', boxShadow: '0 8px 24px rgba(0,0,0,0.1)' }}
                     formatter={v => [v.toFixed(4), 'Log-odds shift']}
                     labelFormatter={(_, payload) => payload?.[0]?.payload?.fullName || ''}
                   />
-                  <Bar dataKey="contribution" radius={[0, 3, 3, 0]}>
+                  <Bar dataKey="contribution" radius={[0, 4, 4, 0]}>
                     {chartData.map((entry, i) => <Cell key={i} fill={entry.fill} />)}
                   </Bar>
                 </BarChart>
@@ -197,7 +222,7 @@ export default function ReportPage() {
               <div className="cf-list">
                 {result.counterfactuals.map((cf, i) => (
                   <div key={i} className={`cf-item ${cf.probability_delta_percent > 0 ? 'cf-positive' : 'cf-neutral'}`}>
-                    {cf.message ? (
+                    {cf.message && !cf.intervention ? (
                       <p className="cf-msg">{cf.message}</p>
                     ) : (
                       <>

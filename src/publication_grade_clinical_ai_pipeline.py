@@ -25,7 +25,7 @@ from sklearn.metrics import (
     roc_auc_score,
     roc_curve,
 )
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import StratifiedKFold, cross_val_score, train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.base import clone
@@ -210,8 +210,10 @@ def fit_estimator(name, estimator, X_train, X_test, y_train, y_test):
     y_test_arr = np.asarray(y_test).astype(int)
     pipeline.fit(X_train, y_train_arr)
 
+    has_native_probabilities = False
     try:
         proba = pipeline.predict_proba(X_test)[:, 1]
+        has_native_probabilities = hasattr(pipeline, "predict_proba")
     except Exception:
         try:
             decision = pipeline.decision_function(X_test)
@@ -232,7 +234,11 @@ def fit_estimator(name, estimator, X_train, X_test, y_train, y_test):
         "mcc": matthews_corrcoef(y_test_arr, pred),
         "roc_auc": roc_auc_score(y_test_arr, proba) if len(np.unique(y_test_arr)) == 2 else np.nan,
         "average_precision": average_precision_score(y_test_arr, proba) if len(np.unique(y_test_arr)) == 2 else np.nan,
-        "brier_score": brier_score_loss(y_test_arr, proba) if len(np.unique(y_test_arr)) == 2 else np.nan,
+        "brier_score": (
+            brier_score_loss(y_test_arr, proba)
+            if has_native_probabilities and len(np.unique(y_test_arr)) == 2
+            else np.nan
+        ),
     }
     return pipeline, metrics, proba, pred
 
@@ -537,7 +543,7 @@ def run_domain_ablation(model, X_train, X_test, y_train, y_test, name):
     return ablation_df
 
 
-def run_optuna(model_name, X_train, y_train, X_test, y_test):
+def run_optuna(model_name, X_train, y_train, X_test=None, y_test=None):
     def objective(trial):
         if model_name == "XGBoost":
             params = {
@@ -572,11 +578,11 @@ def run_optuna(model_name, X_train, y_train, X_test, y_test):
             model = LogisticRegression(**params, class_weight="balanced")
 
         pipeline = Pipeline([("preprocess", build_preprocessor(X_train)), ("model", model)])
-        pipeline.fit(X_train, y_train)
-        proba = pipeline.predict_proba(X_test)[:, 1]
-        return roc_auc_score(y_test, proba)
+        cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+        scores = cross_val_score(pipeline, X_train, y_train, cv=cv, scoring="roc_auc", n_jobs=-1)
+        return scores.mean()
 
-    study = optuna.create_study(direction="maximize")
+    study = optuna.create_study(direction="maximize", sampler=optuna.samplers.TPESampler(seed=42))
     study.optimize(objective, n_trials=15, show_progress_bar=False)
     return study.best_trial.params, study.best_value
 

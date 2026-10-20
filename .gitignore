@@ -18,7 +18,7 @@ data/database_majorproj.csv
 *.sqlite3
 
 /artifacts/
-publication_results/
+# publication_results/ is tracked for reproducibility
 figures/
 *.log
 .DS_Store
@@ -28,7 +28,7 @@ clinical_screening_app/frontend/node_modules/
 clinical_screening_app/frontend/dist/
 clinical_screening_app/frontend/.vite/
 
-# The clinical prototype ships its packaged inference artifacts.
+# The prototype ships its packaged inference artifacts.
 !clinical_screening_app/artifacts/
 !clinical_screening_app/artifacts/*.joblib
 !clinical_screening_app/artifacts/*.json

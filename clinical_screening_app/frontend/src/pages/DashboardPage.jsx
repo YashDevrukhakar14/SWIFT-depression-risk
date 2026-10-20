@@ -102,7 +102,9 @@ function ToggleField({ label, id, value, onChange }) {
         className={`toggle-sw ${value ? 'toggle-on' : ''}`}
         onClick={() => onChange(!value)}
       >
-        <span className="toggle-thumb" />
+        <span className="toggle-track">
+          <span className="toggle-thumb" />
+        </span>
         <span className="toggle-label">{value ? 'Yes' : 'No'}</span>
       </button>
     </div>
@@ -121,7 +123,7 @@ function Section({ title, number, children, defaultOpen = true }) {
       >
         <span className="section-num">{number}</span>
         <span className="section-lbl">{title}</span>
-        <span className="section-chevron">{open ? '▾' : '▸'}</span>
+        <span className="section-chevron">▸</span>
       </button>
       {open && <div className="form-section-body">{children}</div>}
     </div>
@@ -141,8 +143,6 @@ export default function DashboardPage() {
     localStorage.removeItem('spit_user')
     nav('/')
   }
-
-  const yn = v => v ? 'yes' : 'no'
 
   const runEngine = async () => {
     setLoading(true)
@@ -210,11 +210,16 @@ export default function DashboardPage() {
 
   return (
     <div className="dash-shell">
-      {/* ── Navbar ── */}
+
+      {/* ── Glass Navbar ── */}
       <header className="dash-nav">
         <div className="nav-brand">
-          <span className="nav-logo-mark">SS</span>
-          <div>
+          <img
+            src="/assets/spit-swift-logo.jpg"
+            alt="SPIT SWIFT"
+            className="nav-logo-img"
+          />
+          <div className="nav-brand-text">
             <span className="nav-title">SPIT SWIFT</span>
             <span className="nav-tagline">Clinical Screening System</span>
           </div>
@@ -229,13 +234,27 @@ export default function DashboardPage() {
       </header>
 
       <div className="dash-body">
-        {/* ── Page title ── */}
-        <div className="dash-hero">
-          <h1>Patient Clinical Assessment</h1>
-          <p>
-            Complete all sections below and click <strong>Generate Report</strong> to run the
-            Optuna-tuned Logistic Regression screening engine and view the full clinical analysis.
-          </p>
+
+        {/* ── Page Hero Card with Glassmorphic Design ── */}
+        <div className="dash-hero-card">
+          <div className="dash-hero-content">
+            <div className="dash-hero-badge-row">
+              <span className="dash-badge">Passive EHR Screening</span>
+              <span className="dash-badge highlight">Optuna LR · AUC 0.7507</span>
+            </div>
+            <h1>Patient Clinical Assessment</h1>
+            <p>
+              Complete the structured assessment domains below. The system evaluates 43 multidimensional 
+              biomedical, lifestyle, academic, and psychosocial indicators to synthesize a calibrated depression risk profile.
+            </p>
+          </div>
+          <div className="dash-hero-media">
+            <img
+              src="/assets/students-wellness.png"
+              alt="Student Wellness Collaboration"
+              className="dash-hero-thumb"
+            />
+          </div>
         </div>
 
         {error && <div className="dash-error">{error}</div>}
@@ -388,7 +407,7 @@ export default function DashboardPage() {
               <ToggleField label="Abnormal Urinalysis (Overall)" id="f-abu" value={form.abnormal_urinalysis} onChange={v => upd('abnormal_urinalysis', v)} />
             </div>
 
-            <p className="section-note" style={{ marginTop: '1.25rem' }}>Substance Use</p>
+            <p className="section-note" style={{ marginTop: '1.5rem' }}>Substance Use</p>
             <div className="field-grid-2">
               <SelectField
                 label="Cigarette Smoker (5 levels)" id="f-cs5" value={form.cigarette_smoker_5}
@@ -432,7 +451,7 @@ export default function DashboardPage() {
               <ToggleField label="Other Recreational Drugs" id="f-ord" value={form.other_recreational_drugs} onChange={v => upd('other_recreational_drugs', v)} />
             </div>
 
-            <p className="section-note" style={{ marginTop: '1.25rem' }}>Mental Health Indicators</p>
+            <p className="section-note" style={{ marginTop: '1.5rem' }}>Mental Health Indicators</p>
             <div className="field-grid-2">
               <ToggleField label="Anxiety Symptoms Present" id="f-anx" value={form.anxiety_symptoms} onChange={v => upd('anxiety_symptoms', v)} />
               <ToggleField label="Panic Attack Symptoms Present" id="f-pan" value={form.panic_attack_symptoms} onChange={v => upd('panic_attack_symptoms', v)} />
@@ -445,9 +464,11 @@ export default function DashboardPage() {
         <div className="generate-bar">
           {error && <p className="generate-error">{error}</p>}
           <div className="generate-info">
-            <span>All sections complete</span>
+            <span>All sections validated</span>
             <span>·</span>
-            <span>Optuna LR · ROC-AUC 0.7507</span>
+            <span>43 Passive Predictors</span>
+            <span>·</span>
+            <span>Optuna LR</span>
           </div>
           <button
             id="generate-report-btn"
@@ -456,11 +477,12 @@ export default function DashboardPage() {
             disabled={loading}
           >
             {loading
-              ? <><span className="btn-spinner" /> Computing…</>
-              : <>Generate Report  →</>
+              ? <><span className="btn-spinner" /> Computing Risk Assessment…</>
+              : <>Generate Assessment Report →</>
             }
           </button>
         </div>
+
       </div>
     </div>
   )
