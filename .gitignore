@@ -1,6 +1,34 @@
 __pycache__/
 .pytest_cache/
 *.py[cod]
+.ipynb_checkpoints/
+
+venv/
 .venv/
+superset-venv/
+
 .env
+.env.*
+
+data/database_majorproj.csv
+*.xlsx
+*.xls
+*.db
+*.sqlite
+*.sqlite3
+
+/artifacts/
+# publication_results/ is tracked for reproducibility
+figures/
+*.log
 .DS_Store
+Thumbs.db
+
+clinical_screening_app/frontend/node_modules/
+clinical_screening_app/frontend/dist/
+clinical_screening_app/frontend/.vite/
+
+# The prototype ships its packaged inference artifacts.
+!clinical_screening_app/artifacts/
+!clinical_screening_app/artifacts/*.joblib
+!clinical_screening_app/artifacts/*.json

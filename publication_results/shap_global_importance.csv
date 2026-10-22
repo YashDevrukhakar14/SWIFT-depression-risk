@@ -1,0 +1,105 @@
+feature,mean_abs_shap
+numeric__Weight (kg),0.3071049575930626
+numeric__bmi,0.2256724103244425
+categorical__Irregular rhythm or unbalanced meals_yes,0.19529061046212726
+numeric__sbp_dbp_ratio,0.15815721016562112
+categorical__Eating junk food_yes,0.14395263874807648
+categorical__Drinker (3 levels)_no,0.13119846639264449
+categorical__Anxiety symptoms_yes,0.12376292494942086
+categorical__Long commute_yes,0.11321316391706039
+categorical__Parental home_no,0.10728375121655445
+categorical__Irregular rhythm or unbalanced meals_no,0.10147311360469834
+categorical__Anxiety symptoms_no,0.09735374215449796
+numeric__height_m,0.09009356224616119
+numeric__Height (cm),0.09009356224615643
+categorical__Irregular rhythm of meals_no,0.09004013250107236
+categorical__Satisfied with living conditions_no,0.08530050206955636
+numeric__Systolic blood pressure (mmHg),0.07811886068882272
+categorical__Professional objective_no,0.07710805116765608
+categorical__Unbalanced meals_no,0.07625846055971047
+categorical__Age (4 levels)_20 and more,0.07355523379658865
+numeric__Heart rate (bpm),0.07005779967032283
+categorical__Overweight and obesity_yes,0.066367643855144
+categorical__Mode of transportation_on foot,0.06543712055433885
+categorical__Gender_female,0.060768875181221954
+categorical__Having only one parent_yes,0.06074604561703175
+categorical__Satisfied with living conditions_yes,0.05870908438420745
+categorical__Field of study_medicine and allied programs,0.05844785614105047
+categorical__Physical activity(2 levels)_no activity or occasionally,0.058401679126225556
+categorical__Field of study_other programs,0.05593762994091424
+categorical__Drinker (3 levels)_occasionally,0.05523890180379527
+categorical__Cigarette smoker (5 levels)_regularly,0.0525612403744804
+categorical__Eating junk food_no,0.04900454175409682
+numeric__heart_rate_bmi_ratio,0.044945263601280545
+categorical__Field of study_law and political sciences,0.04256291580046897
+categorical__Physical activity(3 levels)_no,0.04221933169011311
+categorical__Year of university_first,0.04135886452042386
+numeric__Diastolic blood pressure (mmHg),0.04078444146251863
+categorical__Age (4 levels)_18,0.04003427680591242
+categorical__Cigarette smoker (5 levels)_frequently,0.039130375017654755
+categorical__Additional income_yes,0.03840572295358501
+categorical__Year of university_second,0.03739897301084518
+categorical__Physical activity(2 levels)_regularly,0.03673237183758186
+categorical__Physical activity(3 levels)_regularly,0.03673237183758186
+categorical__Urinalysis leukocyturia)_no,0.03455514111773115
+categorical__Gender_male,0.034097402066035044
+categorical__Siblings_yes,0.033075273098274925
+categorical__Field of study_sciences,0.03126017880059798
+categorical__On a diet_yes,0.026992297214715195
+categorical__Long commute_no,0.026134638926183756
+categorical__Urinalysis leukocyturia)_yes,0.025138432085661362
+categorical__Year of university_third,0.0250496476045872
+categorical__Panic attack symptoms_yes,0.024736233953698138
+categorical__Age (4 levels)_19,0.024590486392335256
+categorical__Parental home_yes,0.023939181939815885
+categorical__Field of study_sports science,0.023455510967642285
+categorical__Mode of transportation_by car,0.023142097978330136
+categorical__Difficulty memorizing lessons_yes,0.021567886374687657
+categorical__Cigarette smoker (5 levels)_no,0.021135425323564567
+categorical__Cigarette smoker (3 levels)_no,0.021135425323564567
+categorical__Cigarette smoker (3 levels)_frequently to heavily,0.021132431015865115
+categorical__Abnormal urinalysis_yes,0.020718381820211903
+categorical__Binge drinking_no,0.020256824047936942
+categorical__Prehypertension or hypertension_yes,0.019875415647308273
+categorical__Field of study_humanities,0.0194730967719037
+categorical__Panic attack symptoms_no,0.019060918794559095
+categorical__Cigarette smoker (3 levels)_occasionally to regularly,0.018203664050332496
+categorical__Difficulty memorizing lessons_no,0.017476899038480008
+categorical__Abnormal heart rate_yes,0.017177722785905822
+categorical__On a diet_no,0.016474740681265535
+categorical__Having only one parent_no,0.015889304428325375
+categorical__Age (4 levels)_less 18,0.014262046960627241
+categorical__Additional income_no,0.014254021352373409
+categorical__Cigarette smoker (5 levels)_occasionally,0.014167363382902524
+categorical__Marijuana use_yes,0.013638611130943501
+categorical__C.M.U._yes,0.013533743304702806
+categorical__Siblings_no,0.012714032432077482
+categorical__Mode of transportation_by public transportation,0.011316794706740036
+categorical__Marijuana use_no,0.010981694474232634
+categorical__Abnormal urinalysis_no,0.010572733226417164
+categorical__Learning disabilities_yes,0.010110433346715917
+categorical__Learning disabilities_no,0.008165354822319074
+categorical__Professional objective_yes,0.008125810442532607
+categorical__Living with a partner/child_no,0.007779204188053771
+categorical__Physical activity(3 levels)_occasionally,0.00723814506701501
+categorical__C.M.U._no,0.006965849090391558
+categorical__Unbalanced meals_yes,0.00656291266831706
+categorical__Drinker (2 levels)_no or occasionally,0.0049048579924335966
+categorical__Financial difficulties_yes,0.004894143181979394
+categorical__Cigarette smoker (5 levels)_heavily,0.00383963321093144
+categorical__Overweight and obesity_no,0.003827604722721356
+categorical__Financial difficulties_no,0.0035924653931860553
+categorical__Other recreational drugs_no,0.0028948852545836222
+categorical__Urinalysis (hematuria)_no,0.002814278083429964
+categorical__Prehypertension or hypertension_no,0.0022841701016159473
+categorical__Binge drinking_yes,0.0018771336701750917
+categorical__Abnormal heart rate_no,0.0017226387073732495
+categorical__Living with a partner/child_yes,0.001389825784776828
+categorical__Urinalysis (hematuria)_yes,0.001140692354981416
+categorical__Other recreational drugs_yes,0.0010547770645549883
+categorical__Drinker (3 levels)_regularly,0.0004134255446362199
+categorical__Drinker (2 levels)_regularly to heavily,0.0004134255446362199
+categorical__Irregular rhythm of meals_yes,0.0003954427265732361
+categorical__Urinalysis (glycosuria)_no,0.0
+categorical__Urinalysis (positive nitrite test)_no,0.0
+categorical__Urinalysis (proteinuria)_no,0.0
