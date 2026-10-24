@@ -82,7 +82,7 @@ export default function SignupPage() {
             <div className="auth-logo-mark">SS</div>
             <div>
               <div className="auth-brand">SPIT SWIFT</div>
-              <div className="auth-sub">Clinical Screening System</div>
+              <div className="auth-sub">Student Wellness Decision-Support System</div>
             </div>
           </div>
 
@@ -174,7 +174,7 @@ export default function SignupPage() {
           <span className="auth-footer-dot">·</span>
           <span>Optuna-tuned LR</span>
           <span className="auth-footer-dot">·</span>
-          <span>ROC-AUC 0.7507</span>
+          <span>ROC-AUC 0.7500</span>
         </div>
       </div>
 

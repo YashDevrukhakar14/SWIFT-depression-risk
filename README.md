@@ -1,7 +1,7 @@
 # SWIFT: Student Wellness Intelligence Framework for Triage
 ## Machine Learning Reproducibility Package
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22149139.svg)](https://doi.org/10.5281/zenodo.22149139)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23510057.svg)](https://doi.org/10.5281/zenodo.23510057)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%20%7C%203.11-blue.svg)](https://www.python.org/)
 
@@ -48,7 +48,7 @@ data/database_majorproj.csv
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/SWIFT-student-wellness.git
+   git clone https://github.com/YashDevrukhakar14/SWIFT-depression-risk.git
    cd SWIFT-student-wellness
    ```
 

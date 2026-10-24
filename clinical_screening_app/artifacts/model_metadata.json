@@ -1,10 +1,10 @@
 {
-  "model_name": "Logistic Regression (Optuna-validated)",
-  "roc_auc": 0.7507,
+  "model_name": "Baseline Logistic Regression (C = 1.0, balanced)",
+  "roc_auc": 0.75,
   "mcc": 0.2716,
   "brier_score": 0.1828,
-  "decision_threshold": 0.6599999999999999,
-  "risk_threshold_percent": 61.0,
+  "decision_threshold": 0.5,
+  "risk_threshold_percent": 50.0,
   "optuna_hyperparameter_bounds": {
     "C": {
       "low": 0.01,

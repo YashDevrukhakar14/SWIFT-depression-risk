@@ -1,0 +1,96 @@
+raw_feature_name,clean_label,coefficient
+num__Weight (kg),Weight (kg),0.380610
+num__Height (cm),Height (cm),-0.111849
+num__Heart rate (bpm),Heart rate (bpm),-0.092262
+num__height_m,Height (m),-0.111849
+num__bmi,BMI,-0.178347
+num__heart_rate_bmi_ratio,HR–BMI Ratio,-0.077256
+cat__Age (4 levels)_18,Age: 18,0.107229
+cat__Age (4 levels)_19,Age: 19,0.057204
+cat__Age (4 levels)_20 and more,Age: 20 and more,0.159670
+cat__Age (4 levels)_less 18,Age: less 18,-0.124592
+cat__Gender_female,Gender_female,0.104952
+cat__Gender_male,Gender_male,0.094559
+cat__Field of study_humanities,Field: humanities,-0.016209
+cat__Field of study_law and political sciences,Field: law and political sciences,-0.210833
+cat__Field of study_medicine and allied programs,Field: medicine and allied programs,0.080777
+cat__Field of study_other programs,Field: other programs,0.148492
+cat__Field of study_sciences,Field: sciences,-0.078581
+cat__Field of study_sports science,Field: sports science,0.275865
+cat__Year of university_first,Year: first,0.205316
+cat__Year of university_second,Year: second,-0.263496
+cat__Year of university_third,Year: third,0.257692
+cat__Learning disabilities_no,Learning disab._no,-0.795456
+cat__Learning disabilities_yes,Learning disab._yes,0.994967
+cat__Difficulty memorizing lessons_no,Diff. memorizing_no,-0.853246
+cat__Difficulty memorizing lessons_yes,Diff. memorizing_yes,1.052757
+cat__Professional objective_no,Prof. objective_no,0.182823
+cat__Professional objective_yes,Prof. objective_yes,0.016688
+cat__Satisfied with living conditions_no,Satisfied living_no,0.623597
+cat__Satisfied with living conditions_yes,Satisfied living_yes,-0.424086
+cat__Living with a partner/child_no,Partner/child: no,0.233148
+cat__Living with a partner/child_yes,Partner/child: yes,-0.033636
+cat__Parental home_no,Parental home_no,0.259665
+cat__Parental home_yes,Parental home_yes,-0.060153
+cat__Having only one parent_no,Single parent_no,0.033903
+cat__Having only one parent_yes,Single parent_yes,0.165608
+cat__Siblings_no,Siblings_no,0.052700
+cat__Siblings_yes,Siblings_yes,0.146811
+cat__Long commute_no,Long commute_no,-0.049942
+cat__Long commute_yes,Long commute_yes,0.249453
+cat__Mode of transportation_by car,Transport: by car,-0.058165
+cat__Mode of transportation_by public transportation,Transport: by public transportation,0.015131
+cat__Mode of transportation_on foot,Transport: on foot,0.242545
+cat__Financial difficulties_no,Financial diff._no,-0.513226
+cat__Financial difficulties_yes,Financial diff._yes,0.712737
+cat__Additional income_no,Additional income_no,-0.102374
+cat__Additional income_yes,Additional income_yes,0.301885
+cat__C.M.U._no,CMU_no,-0.246916
+cat__C.M.U._yes,CMU_yes,0.446427
+cat__Irregular rhythm of meals_no,Irreg. meal rhythm_no,0.216834
+cat__Irregular rhythm of meals_yes,Irreg. meal rhythm_yes,-0.017323
+cat__Unbalanced meals_no,Unbal. meals_no,0.208458
+cat__Unbalanced meals_yes,Unbal. meals_yes,-0.008947
+cat__Eating junk food_no,Junk food_no,-0.087560
+cat__Eating junk food_yes,Junk food_yes,0.287072
+cat__On a diet_no,On a diet_no,-0.277622
+cat__On a diet_yes,On a diet_yes,0.477133
+cat__Irregular rhythm or unbalanced meals_no,Irreg/Unbal meals_no,-0.227559
+cat__Irregular rhythm or unbalanced meals_yes,Irreg/Unbal meals_yes,0.427070
+cat__Physical activity(3 levels)_no,PhysAct (3L)_no,0.088625
+cat__Physical activity(3 levels)_occasionally,PhysAct (3L)_occasionally,0.031857
+cat__Physical activity(3 levels)_regularly,PhysAct (3L)_regularly,0.079029
+cat__Physical activity(2 levels)_no activity or occasionally,PhysAct (2L)_no activity or occasionally,0.120482
+cat__Physical activity(2 levels)_regularly,PhysAct (2L)_regularly,0.079029
+cat__Urinalysis (glycosuria)_no,Urine glycosuria_no,0.199511
+cat__Urinalysis (proteinuria)_no,Urine proteinuria_no,0.199511
+cat__Urinalysis (hematuria)_no,Urine hematuria_no,0.335826
+cat__Urinalysis (hematuria)_yes,Urine hematuria_yes,-0.136314
+cat__Urinalysis leukocyturia)_no,Urine leukocyturia_no,0.699689
+cat__Urinalysis leukocyturia)_yes,Urine leukocyturia_yes,-0.500178
+cat__Urinalysis (positive nitrite test)_no,Urine nitrite+_no,0.199511
+cat__Abnormal urinalysis_no,Abnormal urine_no,-0.197159
+cat__Abnormal urinalysis_yes,Abnormal urine_yes,0.396670
+cat__Cigarette smoker (5 levels)_frequently,Smoker (5L)_frequently,0.407956
+cat__Cigarette smoker (5 levels)_heavily,Smoker (5L)_heavily,-0.227878
+cat__Cigarette smoker (5 levels)_no,Smoker (5L)_no,-0.054546
+cat__Cigarette smoker (5 levels)_occasionally,Smoker (5L)_occasionally,-0.156302
+cat__Cigarette smoker (5 levels)_regularly,Smoker (5L)_regularly,0.230282
+cat__Cigarette smoker (3 levels)_frequently to heavily,Smoker (3L)_frequently to heavily,0.180077
+cat__Cigarette smoker (3 levels)_no,Smoker (3L)_no,-0.054546
+cat__Cigarette smoker (3 levels)_occasionally to regularly,Smoker (3L)_occasionally to regularly,0.073980
+cat__Drinker (3 levels)_no,Drinker (3L)_no,0.290262
+cat__Drinker (3 levels)_occasionally,Drinker (3L)_occasionally,-0.130771
+cat__Drinker (3 levels)_regularly,Drinker (3L)_regularly,0.040021
+cat__Drinker (2 levels)_no or occasionally,Drinker (2L)_no or occasionally,0.159491
+cat__Drinker (2 levels)_regularly to heavily,Drinker (2L)_regularly to heavily,0.040021
+cat__Binge drinking_no,Binge drinking_no,0.207419
+cat__Binge drinking_yes,Binge drinking_yes,-0.007907
+cat__Marijuana use_no,Marijuana_no,0.095561
+cat__Marijuana use_yes,Marijuana_yes,0.103950
+cat__Other recreational drugs_no,Rec. drugs_no,0.087844
+cat__Other recreational drugs_yes,Rec. drugs_yes,0.111667
+cat__Anxiety symptoms_no,Anxiety_no,-0.711713
+cat__Anxiety symptoms_yes,Anxiety_yes,0.911224
+cat__Panic attack symptoms_no,Panic attacks_no,-0.606852
+cat__Panic attack symptoms_yes,Panic attacks_yes,0.806363
