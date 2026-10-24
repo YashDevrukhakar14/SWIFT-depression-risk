@@ -188,7 +188,7 @@ If you use the SWIFT framework, code, or methodology in your research, please ci
   author={Y. D. and P. K.},
   journal={Journal of Educational Data Mining / Health Informatics},
   year={2026},
-  doi={10.5281/zenodo.22149139}
+  doi={10.5281/zenodo.23510057}
 }
 ```
 
