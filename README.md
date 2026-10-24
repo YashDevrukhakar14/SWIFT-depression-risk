@@ -155,7 +155,7 @@ SWIFT-student-wellness/
 │   └── README.md                    # Detailed provenance and Dryad attribution
 ├── src/
 │   ├── feature_engineering.py       # Data cleaning and deterministic feature engineering
-│   ├── publication_grade_pipeline.py# 17-model benchmark and evaluation functions
+│   ├── publication_grade_clinical_ai_pipeline.py# 17-model benchmark and evaluation functions
 │   ├── explainability.py            # SHAP LinearExplainer and LIME routines
 │   └── calibration.py               # Calibration curve and reliability diagram routines
 ├── scripts/
@@ -163,7 +163,11 @@ SWIFT-student-wellness/
 ├── publication_results/             # Verified empirical outputs and manuscript tables
 │   ├── model_comparison.csv         # Table 5 benchmark comparison
 │   ├── baseline_lr_bootstrap_ci.csv # 1,000-replication bootstrap 95% CIs
-│   └── calibration_reliability.png  # Reliability plot
+│   ├── calibration_reliability_diagram.png # Reliability diagram (Figure 6)
+│   ├── correlation_heatmap.png      # 8x8 Correlation Heatmap (Figure 3)
+│   ├── figure12_lr_coefficients.png # Logistic Regression Coefficients (Figure 12)
+│   ├── lr_coefficients_all95.csv    # All 95 model coefficients
+│   └── shap_global_importance.csv   # Global SHAP importance rankings
 ├── clinical_screening_app/          # Full-stack research prototype
 │   ├── backend/                     # FastAPI inference service
 │   └── frontend/                    # React / Vite dashboard
