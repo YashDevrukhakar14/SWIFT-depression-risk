@@ -1017,3 +1017,1026 @@ body {
   .report-card    { box-shadow: none; break-inside: avoid; backdrop-filter: none; background: white; }
   .risk-banner    { break-inside: avoid; backdrop-filter: none; }
 }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SWIFT REDESIGN: Exact publication layout for Dashboard and Report
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.swift-page-wrapper {
+  min-height: 100vh;
+  background: #f8fafc;
+  color: #1e293b;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+}
+
+/* ── Top Navbar ── */
+.swift-navbar {
+  height: 62px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.swift-brand-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.swift-logo-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 7px;
+  background: #0d9488;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.02em;
+  box-shadow: 0 2px 6px rgba(13, 148, 136, 0.25);
+}
+
+.swift-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.swift-brand-title {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: #0f2942;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+.swift-brand-subtitle {
+  font-size: 0.74rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.swift-nav-user-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.86rem;
+}
+
+.swift-user-name {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.swift-user-divider {
+  color: #cbd5e1;
+}
+
+.swift-logout-btn {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-size: 0.86rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.15s;
+}
+
+.swift-logout-btn:hover {
+  color: #0f2942;
+  text-decoration: underline;
+}
+
+/* ── Main Container ── */
+.swift-main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1.75rem 6.5rem 1.75rem;
+}
+
+.swift-header-block {
+  margin-bottom: 1.4rem;
+}
+
+.swift-page-heading {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #0f2942;
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.02em;
+}
+
+.swift-page-subtext {
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.swift-alert-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.82rem;
+}
+
+/* ── Section Cards ── */
+.swift-form-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.swift-card-section {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.swift-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  background: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+  user-select: none;
+}
+
+.swift-card-header:hover {
+  background: #f8fafc;
+}
+
+.swift-card-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.swift-num-badge {
+  background: #0f2942;
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}
+
+.swift-card-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0f2942;
+}
+
+.swift-chevron {
+  color: #0284c7;
+  font-size: 0.85rem;
+}
+
+.swift-card-body {
+  padding: 1.2rem 1.4rem;
+}
+
+/* ── Section 01 Split Grid ── */
+.swift-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 2rem;
+}
+
+.swift-dropdown-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.swift-toggles-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.swift-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.swift-field label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.swift-field select,
+.swift-field input {
+  height: 38px;
+  padding: 0 0.75rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.83rem;
+  background: #ffffff;
+  color: #1e293b;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.swift-field select:focus,
+.swift-field input:focus {
+  border-color: #0284c7;
+}
+
+.transport-field {
+  margin-top: 0.85rem;
+}
+
+/* ── Toggle Switch ── */
+.swift-toggles-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1.75rem;
+  row-gap: 1rem;
+  align-items: center;
+}
+
+.swift-toggle-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.swift-toggle-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #334155;
+  line-height: 1.3;
+}
+
+.swift-toggle-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  flex-shrink: 0;
+}
+
+.swift-toggle-track {
+  width: 52px;
+  height: 24px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  position: relative;
+  transition: background-color 0.2s ease;
+  user-select: none;
+}
+
+.swift-toggle-btn.active-yes .swift-toggle-track {
+  background: #0ea5e9;
+  justify-content: space-between;
+}
+
+.swift-toggle-btn.active-no .swift-toggle-track {
+  background: #cbd5e1;
+  justify-content: space-between;
+}
+
+.swift-toggle-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
+.swift-toggle-text {
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.swift-toggle-text.text-yes {
+  color: #ffffff;
+  padding-left: 5px;
+}
+
+.swift-toggle-text.text-no {
+  color: #475569;
+  padding-right: 5px;
+}
+
+/* ── Mid Row: 2 Columns ── */
+.swift-mid-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.15rem;
+}
+
+.swift-mid-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+/* ── Biomedical Vitals ── */
+.swift-vitals-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.swift-vitals-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.swift-vitals-field label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #334155;
+  white-space: nowrap;
+}
+
+.swift-vitals-field input {
+  height: 38px;
+  padding: 0 0.5rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #1e293b;
+  font-family: inherit;
+  outline: none;
+}
+
+/* ── Section 07: 3 Sub-columns ── */
+.swift-three-col-section {
+  display: grid;
+  grid-template-columns: 1.1fr 1.8fr 1.1fr;
+  gap: 2rem;
+}
+
+.swift-subgroup-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.swift-subgroup-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0f2942;
+  margin-bottom: 0.85rem;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 0.35rem;
+}
+
+.swift-subgroup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.substance-col .swift-field {
+  margin-bottom: 0;
+}
+
+.swift-sub-toggles-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 0.2rem;
+}
+
+/* ── Bottom Fixed Bar ── */
+.swift-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 58px;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+  padding: 0 2.5rem;
+  z-index: 40;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.swift-bar-text {
+  font-size: 0.78rem;
+  color: #475569;
+  font-weight: 500;
+}
+
+.swift-generate-btn {
+  background: #0f3b56;
+  color: #ffffff;
+  padding: 0.65rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.15s;
+}
+
+.swift-generate-btn:hover:not(:disabled) {
+  background: #0a293c;
+}
+
+.swift-generate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   REPORT PAGE: Individual Student Risk Assessment (Image 1)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.report-main-container {
+  max-width: 1260px;
+  padding-bottom: 3.5rem;
+}
+
+.report-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.15rem;
+}
+
+.report-title-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.swift-back-circle-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  color: #0284c7;
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.15s;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.swift-back-circle-btn:hover {
+  background: #f0f9ff;
+  border-color: #0284c7;
+}
+
+.report-metadata-box {
+  font-size: 0.78rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.meta-line {
+  display: grid;
+  grid-template-columns: 75px 12px auto;
+  align-items: center;
+}
+
+.meta-key {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.meta-colon {
+  color: #64748b;
+  text-align: center;
+}
+
+.meta-val {
+  color: #0f2942;
+  font-weight: 600;
+}
+
+/* ── Green Risk Banner ── */
+.swift-risk-banner {
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  border-radius: 9px;
+  padding: 1.1rem 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.risk-banner-left-area {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  max-width: 75%;
+}
+
+.risk-banner-indicator-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #22c55e;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.risk-banner-text-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.risk-banner-headline {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #166534;
+}
+
+.illustrative-pill {
+  background: #e0f2fe;
+  color: #0284c7;
+  border: 1px solid #bae6fd;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.risk-banner-subtext {
+  font-size: 0.78rem;
+  color: #166534;
+  margin-top: 0.35rem;
+  line-height: 1.45;
+}
+
+.risk-banner-right-area {
+  text-align: center;
+  padding-left: 1.5rem;
+  border-left: 1px solid #bbf7d0;
+  min-width: 140px;
+}
+
+.risk-score-giant {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #16a34a;
+  line-height: 1;
+}
+
+.risk-score-caption {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #166534;
+  margin-top: 3px;
+}
+
+.risk-threshold-pill {
+  display: inline-block;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #334155;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+/* ── 3-Column Report Grid ── */
+.report-three-columns-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.22fr 1.15fr;
+  gap: 1.15rem;
+  align-items: start;
+}
+
+.report-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.report-panel-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.15rem 1.25rem;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+}
+
+.panel-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.85rem;
+}
+
+.panel-icon-badge {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: #0284c7;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.panel-card-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f2942;
+}
+
+/* ── Tables in Column 1 ── */
+.swift-info-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+
+.swift-info-table td {
+  padding: 0.42rem 0;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.swift-info-table tr:last-child td {
+  border-bottom: none;
+}
+
+.swift-info-table .info-val {
+  text-align: right;
+  font-weight: 600;
+  color: #0f2942;
+}
+
+.input-summary-table td {
+  padding: 0.36rem 0;
+}
+
+/* ── Model Performance (Test Set) ── */
+.model-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.55rem;
+  margin-bottom: 0.65rem;
+}
+
+.metric-cell {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 0.75rem 0.35rem;
+  text-align: center;
+}
+
+.metric-score {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0f2942;
+  letter-spacing: -0.01em;
+}
+
+.metric-tag {
+  font-size: 0.64rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.metrics-threshold-note {
+  font-size: 0.72rem;
+  color: #475569;
+  margin-top: 0.35rem;
+}
+
+/* ── Diverging Bar Chart ── */
+.diverging-chart {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-bars-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.chart-row {
+  display: grid;
+  grid-template-columns: 125px 1fr;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chart-label {
+  font-size: 0.7rem;
+  color: #334155;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+  line-height: 1.2;
+}
+
+.chart-track {
+  height: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.chart-zero-line {
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  width: 1px;
+  background: #94a3b8;
+  z-index: 2;
+}
+
+.chart-bar {
+  position: absolute;
+  height: 11px;
+  border-radius: 1px;
+}
+
+.chart-bar.bar-positive {
+  background: #ef4444;
+}
+
+.chart-bar.bar-negative {
+  background: #3b82f6;
+}
+
+.chart-val-text {
+  position: absolute;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #475569;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.chart-axis-wrapper {
+  margin-top: 0.55rem;
+  padding-left: 130px;
+  position: relative;
+}
+
+.chart-axis-labels {
+  position: relative;
+  height: 14px;
+}
+
+.axis-tick-label {
+  position: absolute;
+  font-size: 0.66rem;
+  color: #64748b;
+  line-height: 1;
+}
+
+.chart-axis-title {
+  text-align: center;
+  font-size: 0.68rem;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.chart-legend-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.75rem;
+  font-size: 0.7rem;
+  color: #475569;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.legend-box {
+  width: 9px;
+  height: 9px;
+  border-radius: 1px;
+  display: inline-block;
+}
+
+.legend-box.red-box {
+  background: #ef4444;
+}
+
+.legend-box.blue-box {
+  background: #3b82f6;
+}
+
+/* ── Model Coefficients Table ── */
+.swift-coef-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.76rem;
+}
+
+.swift-coef-table th {
+  padding: 0.35rem 0;
+  border-bottom: 1.5px solid #e2e8f0;
+  color: #64748b;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.swift-coef-table td {
+  padding: 0.38rem 0;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.swift-coef-table .th-right,
+.swift-coef-table .td-right {
+  text-align: right;
+}
+
+.swift-coef-table .coef-val {
+  font-weight: 700;
+  color: #0f2942;
+}
+
+.swift-coef-table .td-ellipsis {
+  text-align: center;
+  color: #94a3b8;
+  padding: 0.15rem 0;
+}
+
+.swift-info-callout {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 6px;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.72rem;
+  color: #0369a1;
+  display: flex;
+  gap: 0.45rem;
+  align-items: flex-start;
+  margin-top: 0.85rem;
+  line-height: 1.4;
+}
+
+.callout-info-icon {
+  font-style: normal;
+  font-weight: 800;
+  color: #0284c7;
+  flex-shrink: 0;
+}
+
+/* ── LIME Header & Column 3 ── */
+.lime-table-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.additional-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.add-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.76rem;
+  color: #334155;
+}
+
+.check-icon {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #0284c7;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.swift-warning-callout {
+  background: #fffbeb;
+  border: 1px solid #fef08a;
+  border-radius: 6px;
+  padding: 0.75rem 0.85rem;
+  font-size: 0.74rem;
+  color: #854d0e;
+  margin-top: 0.85rem;
+}
+
+.warning-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  color: #b45309;
+  margin-bottom: 0.25rem;
+  font-size: 0.76rem;
+}
+
+.warning-icon {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #f59e0b;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.warning-text {
+  line-height: 1.45;
+  color: #78350f;
+}
+
+/* ── Footnote / Caption ── */
+.report-bottom-caption {
+  text-align: right;
+  font-size: 0.72rem;
+  color: #0f3b56;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* ── Responsiveness ── */
+@media (max-width: 1024px) {
+  .report-three-columns-grid {
+    grid-template-columns: 1fr;
+  }
+  .swift-split-grid {
+    grid-template-columns: 1fr;
+  }
+  .swift-mid-grid {
+    grid-template-columns: 1fr;
+  }
+  .swift-three-col-section {
+    grid-template-columns: 1fr;
+  }
+  .swift-vitals-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
